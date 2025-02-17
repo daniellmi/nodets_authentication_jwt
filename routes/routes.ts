@@ -72,7 +72,7 @@ class Routes {
         this.router.get('/home/*', Middleware.authMiddleware);
     }
 
-    public getRouter() {
+    public getRouter(): express.Router {
         return this.router;
     }
 
