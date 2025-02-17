@@ -1,0 +1,825 @@
+/* Reset Basico da Página */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+body::-webkit-scrollbar {
+    width: 8px;       
+}
+  
+body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);   
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(66, 151, 255);
+    border-radius: 20px; 
+}
+
+
+/* Variaveis globais do site */
+
+.container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.opacity{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to left, #000428 , #00498a);
+    opacity: 0.8;
+}
+
+.text{
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text h1{
+    font-size: 30px;
+    color: #333;
+}
+
+.text p{
+    font-size: 17px;
+    padding: 10px 0;
+    color: #666;
+}
+
+/* Header Do Site */
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/background/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    background-position: top;
+    position: relative;
+}
+
+header > .container{
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 20px 4%;
+}
+
+header .menu{
+    display: flex;
+    width: 100%;
+}
+
+/* logo */
+
+header .logo{
+    width: 50%;
+}
+
+header .logo a{
+    text-decoration: none;
+    color: white;
+}
+
+header .logo h1{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* menu desktop */
+
+header .menu_desktop{
+    width: 50%;
+    line-height: 50px;
+}
+
+header .menu_desktop ul{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+}
+
+header .menu_desktop ul li{
+    font-size: 15px;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header .menu_desktop .discover{
+    padding: 11px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+header .menu_desktop .discover:hover{
+    color: blue;
+    background-color: white;
+    transition: 1s;
+}
+
+
+header .menu_desktop ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+/* text banner */
+
+header .text-banner{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header .text-banner h2{
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+header .text-banner h1{
+    padding: 30px;
+    font-size: 45px;
+    border: 1px solid white;
+}
+
+header .text-banner h3{
+    padding: 25px 0;
+    font-weight: lighter;
+}
+
+/* section features */
+
+section.features{
+    width: 100%;
+    padding: 50px 0;
+}
+
+section.features .features-content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+section.features .features-wraper{
+    width: calc(100% / 3);
+    padding: 30px;
+    text-align: center;
+}
+
+section.features .feat-img h2{
+    font-size: 55px;
+    color: #0092f3;
+    cursor: pointer;
+}
+
+section.features .feat-txt h3{
+    padding: 15px 0;
+    color: #333;
+}
+
+section.features .feat-txt p{
+    color: #666;
+}
+
+/* Section Devices */
+
+section.devices{
+    width: 100%;
+    padding: 50px 0;
+}
+
+section.devices .device_single{
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.devices .device_single:nth-child(2){
+    flex-direction: row-reverse;
+}
+
+section.devices .device_txt{
+    width: calc(100% / 2);
+    padding: 0 30px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.devices .device_txt h2{
+    color: #333;
+    font-size: 30px;
+}
+
+section.devices .device_txt p{
+    color: #777;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+section.devices .device_txt button{
+    width: 45%;
+    padding: 20px;
+    border: none;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: 1s;
+    border-radius: 5px;
+    background-color: #0092f3;
+    color: white;
+}
+
+section.devices .device_txt button:hover{
+    transition: 1s;
+    background-color: white;
+    color: #0092f3;
+    border: 1px solid #0092f3;
+}
+
+section.devices .device_txt > .blue{
+    color: blue;
+    padding: 0 15px;
+    border-left: 2px solid rgb(0, 119, 255);
+}
+
+section.devices .device_txt .icon{
+    padding: 0;
+}
+
+section.devices .device_txt .icon i{
+    color: rgb(0, 153, 255);
+    padding:  10px  10px 10px 0 ;
+}
+
+section.devices .device_img{
+    width: calc(100% / 2);
+}
+
+section.devices .device_img img{
+    width: 100%;
+}
+
+/* Section Newsletter */
+
+section.newsletter{
+    width: 100%;
+    height: 60vh;
+    background-image: url(../images/background/background2.jpg);
+    position: relative;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section.newsletter > .container{
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.newsletter form{
+    width:70%;
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section.newsletter .text{
+    width: 100%;
+    margin-top: 50px;
+}
+
+section.newsletter .text input[type='email']{
+    height: 55px;
+    width: 70%;
+    padding: 20px;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid white;
+    border-right: none;
+}
+
+section.newsletter .text input[type='email']::placeholder{
+    color: white;
+}
+
+section.newsletter .text button{
+    width: 10%;
+    height: 55px;
+    margin: 0 -5px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    border-radius: 0 10px 10px 0;
+    background-color: transparent;
+    border: 1px solid white;
+    border-left: none;
+}
+
+/* time */
+
+section.time{
+    padding: 50px 0;
+    width: 100%;
+}
+
+section.time .time-content{
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section.time .time-wraper{
+    width: calc(100% / 4);
+    padding: 20px;
+}
+
+section.time .time-single{
+    width: 100%;
+    position: relative;
+}
+
+section.time .time-single img{
+    width: 100%;
+}
+
+section.time .time-single .text-time{
+    text-align: center;
+    width: 100%;
+}
+
+section.time .time-single .text-time h3{
+    color: #333;
+}
+
+section.time .time-single .text-time p{
+    padding: 7px 0;
+    color: #0092f3;
+}
+
+section.time .time-single .text-time .redes{
+    display: none;
+}
+
+section.time .time-single .text-time .redes a{
+    color: #0092f3;
+    font-size: 20px;
+    padding: 0 10px;
+    transition: 1s;
+}
+
+/* serviços */
+
+section.services{
+    width: 100%;
+    padding: 50px 0;
+}
+
+section.services .cell{
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+section.services .cell img{
+    width: 100%;
+}
+
+section.services .service-cont{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section.services .serv-wrper{
+    width: calc(100% / 3);
+    padding: 30px;
+    text-align: center;
+}
+
+section.services .serv-img{
+    padding: 10px 0;
+}
+
+section.services .serv-img i{
+    padding: 0 15px 0 0;
+    font-size: 30px;
+    color: #0004f3;
+}
+
+section.services .serv-img span{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+section.services .serv-txt p{
+    color: #666;
+}
+
+/* paises */
+
+section.paises{
+    width: 100%;
+    padding: 50px 0;
+}
+
+section.paises > .container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section.paises .igm{
+    width: 50%;
+}
+section.paises .igm img{
+    width: 100%;
+}
+
+section.paises .asks{
+    width: 50%;
+    padding: 20px ;
+    cursor: pointer;
+}
+
+section.paises .asks .txt{
+    padding: 10px 0;
+}
+
+section.paises .asks .txt hr{
+    border-color: #0092f3;
+    margin: 10px 0;
+}
+
+section.paises .asks .txt > p{
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+section.paises .asks .txt .resposta{
+    height: 0;
+    overflow: hidden;
+
+}
+
+/* discover */
+
+section.discover{
+    width: 100%;
+    padding: 50px 0;
+}
+
+section.discover .discover-all{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.discover .discover-cont{
+    width: 50%;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.discover .discover-wrper{
+    padding: 30px;
+    text-align: center;
+}
+
+section.discover .discover-img{
+    padding: 10px 0;
+}
+
+section.discover .discover-img i{
+    padding: 0 15px 0 0;
+    font-size: 30px;
+    color: #0004f3;
+}
+
+section.discover .discover-img span{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+section.discover .discover-txt p{
+    color: #666;
+}
+
+section.discover .img-info{
+    width: 50%;
+    text-align: end;
+}
+
+section.discover .img-info img{
+    width: 80%;
+}
+
+/* watch */
+
+section.watch{
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    background-image: url(../images/background/background44.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+section.watch > .container{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.watch button{
+    padding: 10px 20px;
+    border: 2px solid white;
+    text-align: center;
+    border-radius: 555px;
+    font-size: 50px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+section.watch button:hover{
+    background-color: white;
+    color: #0092f3;
+    transition: 1s;
+}
+
+section.watch h1{
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* precos */
+
+section.precos{
+    width: 100%;
+    margin: 50px 0 ;
+}
+
+section.precos .precos-cont{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+section.precos .precos-wraper{
+    text-align: center;
+    width: calc(100% / 3);
+    padding: 20px;
+}
+
+section.precos .precos-single{
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.precos .precos-single h3{
+    font-size: 18px;
+}
+
+section.precos .precos-single h1{
+    font-size: 70px;
+}
+
+section.precos .blu{
+    color: white;
+    background-color: #007dd1;
+}
+
+section.precos .precos-single p{
+    padding: 10px 0;
+}
+
+section.precos .precos-single button{
+    width: 50%;
+    padding: 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #007dd1;
+}
+
+section.precos .precos-single button:hover{
+    background-color: transparent;
+    transition: 1s;
+    border: 1px solid #007dd1;
+    color: #007dd1;
+}
+
+section.precos .blu button{
+    border: 1px solid white;
+}
+
+section.precos .blu button:hover{
+    color: #007dd1;
+    background-color: white;
+    transition: 1s;
+}
+
+/* Downloads */
+section.download{
+    width: 100%;
+    height: 50vh;
+    background-image: url(../images/background/background3.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+section.download > .container{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.download .so{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section.download .so-wr{
+    text-align: center;
+    width: calc(100% / 3);
+    padding: 10px;
+}
+
+section.download button{
+    width: 80%;
+    padding: 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+}
+
+section.download button:hover{
+    background-color: white;
+    color: #007dd1;
+    cursor: pointer;
+    transition: 1s;
+}
+
+/* contato */
+
+section.contact{
+    width: 100%;
+    padding: 50px 0;
+    background-color: #222;
+    text-align: center;
+}
+
+section.contact .form-flut{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section.contact form .w100{
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+}
+
+section.contact form .w50{
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+section.contact form .w50 textarea{
+    width: 100%;
+    font-size: 18px;
+    height: 210px;
+    background-color: transparent;
+    border: 1px solid #666;
+    outline: none;
+    resize: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    padding:15px;
+}
+
+section.contact form .w100 input{
+    width: 100%;
+    font-size: 20px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid #666;
+    border-radius: 10px;
+    margin: 15px 0;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    padding:15px;
+}
+
+section.contact form input{
+    margin-top: 50px;
+    width: 30%;
+    padding: 10px;
+    color: white;
+    background-color: #007dd1;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid #007dd1;
+    text-align: center;
+    color: #333;  
+}
+
+footer span a i{
+    color: #0092f3;  
+}
+
+footer span a{
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+footer p{
+    padding: 5px 0;
+}

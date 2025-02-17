@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="">
+</head>
+
+<body>
+    <section class="contact" id="contato">
+        <div class="container">
+
+            <div class="text">
+                <h1 style="color: white;">Ótimos Preços</h1>
+                <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui optio
+                    dolores molestiae accusamus praesentium totam maxime laudantium dolor iste!</p>
+            </div><!--text-->
+
+            <!--action "https://formspree.io/f/mdobwowz"-->
+            <form action="login.html">
+
+                <div class="form-flut">
+                    <div class="w100">
+                        <input type="text" name="nome" id="name" placeholder="Digite seu Nome..">
+                        <input type="email" name="email" id="email" placeholder="Digite seu Email..">
+                        <input type="number" name="numero" id="password" placeholder="Digite sua senha..">
+                    </div>
+
+                </div>
+
+                <input type="submit" value="Enviar">
+
+            </form>
+
+        </div>
+    </section> <!--contact-->
+
+    <script>
+        const form = document.querySelector("form");
+
+
+        form.addEventListener("submit", async (event) => {
+            const email = document.querySelector("#email").value;
+            const password = document.querySelector("#password").value;
+            const username = document.querySelector("#name").value;
+            const telephone = null;
+
+            const options = {
+
+                method: "POST",
+                headers: { "Content-type": "Application/json" },
+                body: JSON.stringify({ email, password, username, telephone })
+            }
+
+            const response = await fetch("/api/user", options)
+                .then(res => { return res.json() });
+
+            console.log(response);
+        })
+
+    </script>
+
+</body>
+
+</html>

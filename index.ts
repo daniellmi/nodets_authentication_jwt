@@ -3,9 +3,9 @@ import cors from 'cors';
 import type { Application } from 'express';
 import bodyParser from 'body-parser';
 import Routes from './routes/routes';
-import DbConnection from './connection/database';
+import DbConnection from './controller/database';
 import 'dotenv/config';
-import path from 'path'
+import path from 'path';
 import cookieParser from 'cookie-parser';
 
 class Express extends DbConnection {
@@ -21,6 +21,7 @@ class Express extends DbConnection {
         this.router = new Routes();
         this.app = express();
         this.listen();
+
     }
 
     public middleware() {
@@ -28,15 +29,13 @@ class Express extends DbConnection {
         this.app.use(bodyParser.json());
         this.app.use(cookieParser());
         this.app.use(this.router.getRouter());
-        this.app.use('/', express.static(path.join(__dirname, 'client')));
-        this.app.use('/home', express.static(path.join(__dirname, 'client', 'home.html')))
+        this.app.use('/', express.static(path.join(__dirname, 'public')));
     }
 
     private listen() {
         this.app.listen(this.port, () => {
             console.log("app running on port", this.port)
         })
-
     }
 
 }

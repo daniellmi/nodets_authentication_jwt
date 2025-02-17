@@ -1,8 +1,8 @@
-import express, { NextFunction, Request, Response } from 'express';
-import User from '../connection/dbcontroller';
+import express, { Request, Response } from 'express';
+import User from '../model/dbmodel';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import path from 'path'
+import Middleware from '../controller/controller';
 
 class Routes {
 
@@ -19,21 +19,25 @@ class Routes {
             const { email, password, username, telephone } = req.body;
 
             try {
-                const userExists = await User.findOne({ email: email });
+                if (email && password && username) {
+                    const userExists = await User.findOne({ email: email });
 
-                if (!userExists) {
-                    let user = new User({
-                        email: email,
-                        password: bcrypt.hashSync(password, 10),
-                        username: username,
-                        telephone: telephone
-                    });
-                    await user.save();
-                    return res.status(201).send("user saved succesfully");
+                    if (!userExists) {
+                        let user = new User({
+                            email: email,
+                            password: bcrypt.hashSync(password, 10),
+                            username: username,
+                            telephone: telephone
+                        });
+                        await user.save();
+                        return res.status(201).send("user saved succesfully");
+                    }
+
+                    else
+                        return res.status(409).send("user already exists");
                 }
-
                 else
-                    return res.status(409).send("user already exists");
+                    return res.status(400).send('all the information is needed');
             }
             catch (error) {
                 console.log(error);
@@ -67,37 +71,15 @@ class Routes {
             }
 
         })
-        
+
         this.router.get('/home', Middleware.authMiddleware);
         this.router.get('/home/*', Middleware.authMiddleware);
     }
 
-    public getRouter() {
+    public getRouter(): express.Router {
         return this.router;
     }
 
-}
-class Middleware {
-    //method static to take the need of a class instance
-    static authMiddleware(req: Request, res: Response, next: NextFunction): any {
-        const COOKIE_TOKEN = req.headers.cookie?.replace("authorization-token=", "");
-
-        if (!COOKIE_TOKEN) {
-            return res.status(301).redirect("/");
-        }
-        try {
-            const token = jwt.verify(COOKIE_TOKEN, process.env.SECRET_TOKEN as string);
-            console.log(token);
-            if (token) return res.status(200).sendFile(path.join(__dirname, '../client', 'home.html'))
-            next();
-
-        } catch (error) {
-
-            console.log(error);
-
-        }
-        return res.status(401).send('unathourized');
-    }
 }
 
 export default Routes;

@@ -1,0 +1,238 @@
+/* Ocultando Menu Mobile */
+
+header nav.menu_mobile{
+    display: none;
+}
+
+@media screen and (max-width: 1000px){
+    
+    /* header */
+
+    /* menu desktop */
+
+    header nav.menu_desktop{
+        display: none;
+    }
+
+    /* menu mobile */
+
+    header nav.menu_mobile{
+        display: flex;
+        width: 50%;
+        line-height: 50px;
+        justify-content: end;
+    }
+
+    header nav.menu_mobile > h2{
+        color: white;
+        cursor: pointer;
+    }
+
+    header nav.menu_mobile ul h2{
+        cursor: pointer;
+    }
+
+    header nav.menu_mobile ul{
+        color: aqua;
+        list-style: none;
+        width: 0;
+        overflow: hidden;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        transition: 1s;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+
+    header nav.menu_mobile ul li{
+        font-size: 14px;
+    }
+
+    header nav.menu_mobile ul li a{
+        color: white;
+        text-decoration: none;
+    }
+
+    header nav.menu_mobile ul li a:hover{
+        color: aqua;
+    }
+
+    /* section features */
+
+    section.features .features-wraper{
+        width: 100%;
+        padding: 10px;
+     }
+
+    /* section features */
+    
+    section.devices .device_txt{
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        height: 100%;
+        align-items: center;
+    }
+
+    section.devices .device_img{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    section.devices .device_img img{
+        width: 50%;
+    }
+
+    /* time */
+
+    section.time .time-wraper{
+        width: calc(100% / 2);
+        padding: 40px;
+    }
+
+    /* services */
+
+    section.services .serv-wrper{
+        width: calc(100% / 2);
+    }
+
+    /* paises */
+
+    
+    section.paises .igm{
+        width: 100%;
+    }
+
+    section.paises .asks{
+        width: 100%;
+    }
+
+    /* discover */
+
+    section.discover .discover-cont{
+        width: 100%;
+    }
+
+    section.discover .img-info{
+        width: 100%;
+        text-align: center;
+    }
+    
+    section.discover .img-info img{
+        width: 50%;
+    }
+
+    section.precos .precos-wraper{
+        width: 100%;
+        padding: 5px;
+    }
+
+    section.precos .precos-single button{
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 700px){
+
+    /* text banner */
+
+    header .text-banner h1{
+        padding: 20px;
+        font-size: 30px;
+    }
+
+    header .text-banner h2{
+        font-size: 18px;
+    }
+
+    header .text-banner h3{
+        font-size: 15px;
+    }
+
+    /* section Newsletter */
+
+    section.newsletter form{
+        width:100%;
+    }
+
+    
+    section.download{
+        height: 100vh;
+    }
+    
+    
+    section.download .so-wr{
+        width: 100%;
+    }
+
+    section.contact form .w100{
+        width: 100%;
+    }
+    
+    section.contact form .w50{
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    section.contact form input{
+        width: 60%;
+    }
+    
+    
+
+}
+
+@media screen and (max-width: 500px){
+
+    /* variaveis globais do site */
+
+    .text{
+        width: 100%;
+    }
+    
+    .text h1{
+        font-size: 28px;
+    }
+
+    /* secttion devices */
+
+    section.devices .device_img img{
+        width: 90%;
+    }
+
+    section.devices .device_txt button{
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
+    /* time */
+
+    section.time .time-wraper{
+        width: 100%;
+    }
+
+    /* service */
+
+    section.services .serv-wrper{
+        width: 100%;
+    }
+
+    .busca{
+        font-weight: lighter !important;
+        height: 250px !important;
+        transition: 1s;
+    }
+
+    section.discover .img-info img{
+        width: 80%;
+    }
+
+
+}
