@@ -29,7 +29,6 @@ class Express extends DbConnection {
         this.app.use(cookieParser());
         this.app.use(this.router.getRouter());
         this.app.use('/', express.static(path.join(__dirname, 'client')));
-        this.app.use('/home', express.static(path.join(__dirname, 'client', 'home.html')))
     }
 
     private listen() {
